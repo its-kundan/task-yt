@@ -1,4 +1,4 @@
-package youtube
+package youtube;
 
 import (
 	"encoding/json"
@@ -8,6 +8,8 @@ import (
 	"time"
 	"youtube-fetcher/config"
 	"youtube-fetcher/db"
+
+	"gorm.io/gorm/clause" // Import the clause package explicitly
 )
 
 type YouTubeResponse struct {
@@ -62,7 +64,10 @@ func fetchVideos(query string) {
 			ThumbnailsURL: item.Snippet.Thumbnails.Default.URL,
 		}
 
-		db.DB.Clauses(clause.OnConflict{DoNothing: true}).Create(&video)
+		// Use clause.OnConflict to avoid duplicate entries
+		db.DB.Clauses(clause.OnConflict{
+			DoNothing: true, // Ignore if conflict occurs
+		}).Create(&video)
 	}
 	log.Println("Fetched and stored latest videos")
 }
