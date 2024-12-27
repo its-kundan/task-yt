@@ -1,2 +1,40 @@
 .history
 .env
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+idea.md
+# Output of the `go build` and `go test` commands
+*.out
+
+# IDE and Editor configurations
+.idea/
+.vscode/
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and debugging files
+*.log
+*.trace
+
+# Dependency directories
+vendor/
+
+# Build directories
+bin/
+build/
+
+# Environment variables
+.env
+
+# Test coverage files
+*.coverprofile
+coverage.out
+
+# Cache directories
+*.cache/
