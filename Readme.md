@@ -11,7 +11,7 @@ Copy code
 ## Setup
 1. Clone the repository:
    ```bash
-   git clone <repo_url>
+   git clone https://github.com/its-kundan/task-yt.git
    cd youtube-fetcher
 Create a .env file:
 
